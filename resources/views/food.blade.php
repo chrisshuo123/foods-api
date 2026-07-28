@@ -15,13 +15,14 @@
         <div class="food-catalog">
             @foreach($foods as $food)
             {{-- Soto Ayam Lamongan --}}
-            <div class="food-list">
-                <img src="{{ asset('img/' . $food['image']) }}" alt="foods">
+            <div class="food-list" data-id="{{ $food->id }}" data-name="{{ $food->name }}" data-image="{{ $food->image }}" data-slug="{{ $food->slug }}" data-body="{{ $food->body }}" onclick="openModal(this)">
+                <img src="{{ asset('img/' . $food->image) }}" alt="{{ $food->name }}">
                 <div class="food-info">
-                    <h3>{{ $food['name'] }}</h3>
-                    <p id="myParagraph" class="text-limiter" data-word-limit="20">
+                    <h3>{{ $food->name }}</h3>
+                    {{-- <p id="myParagraph" class="text-limiter" data-word-limit="20">
                         {{ $food['body'] }}
-                    </p>
+                    </p> --}}
+                    <p>{{ Str::limit($food->body, 20) }}</p>
                     <p>
                         <i class="fa-solid fa-location-dot"></i>
                         <span><b>Located in: </b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lamongan, Jawa Timur, Indonesia</span>
@@ -40,10 +41,26 @@
         @endforeach --}}
     </div>
 
+    {{-- Pop Up Modal --}}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="image-wrapper">
+                <img id="modalImage" src="" alt="">
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="modalLocation">Lamongan, Jawa Timur, Indonesia</span></p>
+                <p id="modalBody"></p>
+                <button class="btn btn-secondary modal-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script> --}}
     <script>
         $(document).ready(function() {
             console.log("✅ jQuery is working!");
