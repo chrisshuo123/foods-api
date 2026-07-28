@@ -148,9 +148,9 @@
             </div>
             <div class="modal-body">
                 <h2>Soto Ayam Lamongan</h2>
-                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b> Lamongan, Jawa Timur, Indonesia</p>
+                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lamongan, Jawa Timur, Indonesia</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum nemo laudantium minus, ut, veritatis ipsa molestias illum debitis, expedita numquam porro? Tempore quam hic exercitationem, quidem earum consequuntur ipsam voluptatem.</p>
-                <button id="myModal" class="btn btn-secondary" style="display: block; max-width: 200px; margin: 0 auto;">Close</button>
+                <button id="myModal" class="btn btn-secondary modal-close-btn">Close</button>
             </div>
         </div>
     </div>
