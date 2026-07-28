@@ -1,10 +1,15 @@
 <?php
 
+use App\Models\Food;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('food');
+    return view('home');
+});
+
+Route::get('/foods', function () {
+    return view('food', ['foods' => Food::all()]);
 });
 
 Route::get('/comedy-data', function () {
