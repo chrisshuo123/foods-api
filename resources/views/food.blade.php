@@ -12,16 +12,15 @@
 <body>
     <div class="container" style="margin-top: 60px;">
         <h1 style="margin-bottom: 40px;">Lists of Indonesian Fooooddddds</h1>
-        
-        @foreach($foods as $food)
         <div class="food-catalog">
+            @foreach($foods as $food)
             {{-- Soto Ayam Lamongan --}}
             <div class="food-list">
-                <img src="{{ asset('img/soto-lamongan.jpg') }}" alt="foods">
+                <img src="{{ asset('img/' . $food['image']) }}" alt="foods">
                 <div class="food-info">
-                    <h3>Soto Ayam Lamongan</h3>
+                    <h3>{{ $food['name'] }}</h3>
                     <p id="myParagraph" class="text-limiter" data-word-limit="20">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, deserunt molestias, quod dolore id ad veritatis alias, officia quisquam consequatur magnam unde non quia quam voluptatibus ut atque repudiandae iste.
+                        {{ $food['body'] }}
                     </p>
                     <p>
                         <i class="fa-solid fa-location-dot"></i>
@@ -33,8 +32,12 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
+
+        {{-- @foreach($foods as $food)
+            <div>{{ $food->id }}. {{ $food->name }}</div>
+        @endforeach --}}
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
