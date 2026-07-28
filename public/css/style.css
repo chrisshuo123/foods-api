@@ -152,6 +152,8 @@ h1 {
     background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
     justify-content: center;
     align-items: center;
+    /* Buat animasi fadeout .modal saat di close */
+    /* transition: opacity 0.3s ease; */
 }
 
 /* Modal content box */
@@ -180,6 +182,13 @@ h1 {
     padding: 20px 30px 30px;
     position: relative;
 }
+.modal-body h2 {
+    font-family: 'BevanRegular';
+}
+.modal-body p {
+    font-family: 'Edu_VIC_WA_NT_Hand';
+}
+
 
 /* Efek fade gradient dibawah gambar */
 .modal-content .image-wrapper {
@@ -209,6 +218,12 @@ h1 {
 
 .close-btn:hover {
     color: #000;
+}
+
+.modal-close-btn {
+    display: block !important;
+    max-width: 200px !important;
+    margin: 0 auto !important;
 }
 
 /* Fade-in animation */
