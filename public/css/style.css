@@ -1,0 +1,189 @@
+body {
+    background-color: #edebe6 !important;
+}
+
+/* For the Title */
+@font-face {
+    font-family: 'BevanItalic';
+    src: url('../../font/Bevan/Bevan-Italic.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'BevanRegular';
+    src: url('../../font/Bevan/Bevan-Regular.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'BlackOpsOneRegular';
+    src: url('../../font/Black_Ops_One/BlackOpsOne-Regular.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'BungeeRegular';
+    src: url('../../font/Bungee/Bungee-Regular.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* For the Sub-Title */
+@font-face {
+    font-family: 'Anton';
+    src: url('../../font/Anton/Anton-Regular.ttf') format('truetype');
+}
+/* For the Paragraph */
+@font-face {
+    font-family: 'Edu_VIC_WA_NT_Hand';
+    src: url('../../font/Edu_VIC_WA_NT_Hand/EduVICWANTHand-VariableFont_wght.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'BungeeRegular';
+    position: relative;
+    text-align: center;
+}
+
+.food-catalog {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.food-list {
+    flex: 1 1 280px;
+    background-color: #fcfcfa;
+    max-width: 350px;
+    min-width: 250px;
+    border-radius: 10px;
+    /* height: 300px; */
+    overflow: hidden; /* Prevents content from spilling out */
+    margin-right: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    box-sizing: border-box; /* Includes padding in width/height */
+}
+.food-list .food-info {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    flex: 1;
+}
+.food-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    /* margin: 10px auto 30px auto; */
+    /* flex-shrink: 0; */
+}
+.food-list h3 {
+    /* text-align: center; */
+    margin-top:25px;
+    margin-bottom:25px;
+    /* white-space: nowrap; */
+    font-family: 'BevanRegular';
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+.food-list p {
+    flex: 1; /* Takes remaining space */
+    font-family: 'Edu_VIC_WA_NT_Hand';
+}
+
+.food-list .food-info p {
+    padding: 0 10px 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    gap: 12px;
+}
+.food-list .food-info p:nth-of-type(2) {
+    flex-shrink: 0; /* Prevents shrinking */
+    margin-bottom:25px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    gap: 12px;
+}
+.food-list .food-info p:nth-of-type(2) span {
+    margin-left: 5px;
+}
+
+.food-list .food-info .cta-read-share {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.food-list .food-info .cta-read-share {
+    margin-top: auto; /* Pushes to bottom */
+}
+
+.food-list .food-info .cta-read-share .cta-read {
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+    cursor: pointer;
+}
+.food-list .food-info .cta-read-share .cta-share {
+    text-decoration:none;
+    color:black;
+}
+.food-list .food-info .cta-read-share .cta-share i {
+    margin-right: 15px;
+    margin-top:5px;
+}
+
+/* Modal background overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
