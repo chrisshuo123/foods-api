@@ -142,10 +142,16 @@
     {{-- Pop Up Modal --}}
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>🎭 More Fun!</h2>
-            <p>Welcome to the comedy zone! Here's more content for you.</p>
-            <p>🤣 Keep laughing!</p>
+            <div class="image-wrapper">
+                <img src="{{ asset('img/soto-lamongan.jpg') }}" alt="Soto Ayam Lamongan">
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h2>Soto Ayam Lamongan</h2>
+                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b> Lamongan, Jawa Timur, Indonesia</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum nemo laudantium minus, ut, veritatis ipsa molestias illum debitis, expedita numquam porro? Tempore quam hic exercitationem, quidem earum consequuntur ipsam voluptatem.</p>
+                <button id="myModal" class="btn btn-secondary" style="display: block; max-width: 200px; margin: 0 auto;">Close</button>
+            </div>
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
