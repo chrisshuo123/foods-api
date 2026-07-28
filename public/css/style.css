@@ -157,14 +157,43 @@ h1 {
 /* Modal content box */
 .modal-content {
     background-color: #fff;
-    margin: auto;
+    margin: 50px auto;
     padding: 30px;
     border-radius: 15px;
-    width: 400px;
+    width: 700px !important;
     max-width: 90%;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: fadeIn 0.3s ease;
+    overflow: hidden; /* Untuk membuat sudut gambar melengkung */
+    padding: 0; /* Hilangkan padding */
+}
+.modal-content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Container untuk teks dibawah gambar */
+.modal-body {
+    padding: 20px 30px 30px;
+    position: relative;
+}
+
+/* Efek fade gradient dibawah gambar */
+.modal-content .image-wrapper {
+    position: relative;
+}
+.modal-content .image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, white);
+    pointer-events: none;
 }
 
 /* Close button */
