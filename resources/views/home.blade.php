@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/mic-favicon/favicon-32x32.png') }}">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <div class="container" style="margin-top: 60px;">
