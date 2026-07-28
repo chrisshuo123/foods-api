@@ -18,4 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('After:', limitedText);
         paragraph.textContent = limitedText;
     });
+
+    // Close Button on the Modal
+    document.querySelector('.modal-close-btn').onclick = function() {
+        // document.getElementById('myModal').style.display = 'none';
+        const modal = document.getElementById('myModal');
+        modal.style.opacity = '0';
+        setTimeout(() => { modal.style.display = 'none'; }, 300);
+    };
 });
