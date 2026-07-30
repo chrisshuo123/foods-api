@@ -15,17 +15,17 @@ class FoodSeeder extends Seeder
     {
         Food::create([
             'name'=> 'Soto Ayam Lamongan',
-            'image'=> 'soto-lamongan.jpg',
+            'image'=> 'soto-lamongan.webp',
             'province_id' => 35, // Jawa Timur (JAWA TIMUR)
             'regency_id' => 3524, // Lamongan (KAB. LAMONGAN)
-            'slug'=> 'soto-lamongan',
+            'slug'=> 'soto-ayam-lamongan',
             'body'=> 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, deserunt molestias, quod dolore id ad veritatis alias, officia quisquam consequatur magnam unde non quia quam voluptatibus ut atque repudiandae iste.',
         ]);
 
         Food::insert([
             [
                 'name' => 'Rawon',
-                'image' => 'rawon.jpeg',
+                'image' => 'rawon.webp',
                 'other_location' => null,
                 'province_id' => 35, // Jawa Timur (JAWA TIMUR)
                 'regency_id' => 3502, // Ponorogo (KAB. PONOROGO)
@@ -38,7 +38,7 @@ class FoodSeeder extends Seeder
             ],
             [
                 'name' => 'Nasi Goreng Roa',
-                'image' => 'nasgor-roa.jpg',
+                'image' => 'nasgor-roa.webp',
                 'other_location' => null,
                 'province_id' => 71, // Sulawesi Utara (SULAWESI UTARA)
                 'regency_id' => 7171, // Manado (KOTA MANADO)
@@ -51,7 +51,7 @@ class FoodSeeder extends Seeder
             ],
             [
                 'name' => 'Daging Rendang',
-                'image' => 'rendang.jpg',
+                'image' => 'rendang.webp',
                 'other_location' => null,
                 'province_id' => 12, // Sumatra Utara (SUMATERA UTARA)
                 'regency_id' => null,
@@ -64,7 +64,7 @@ class FoodSeeder extends Seeder
             ],
             [
                 'name' => 'Kue Tetu',
-                'image' => 'kue-tetu-palu.jpeg',
+                'image' => 'kue-tetu-palu.webp',
                 'other_location' => null,
                 'province_id' =>72, // Sulawesi Tengah (SULAWESI TENGAH)
                 'regency_id' => 7271, // Palu (KOTA PALU)
@@ -77,7 +77,7 @@ class FoodSeeder extends Seeder
             ],
             [
                 'name' => 'Bika Ambon',
-                'image' => 'bika-ambon.jpg',
+                'image' => 'bika-ambon.webp',
                 'other_location' => null,
                 'province_id' =>12, // Sumatera Utara (SUMATERA UTARA)
                 'regency_id' => 1271, // Medan (KOTA MEDAN)
@@ -90,7 +90,7 @@ class FoodSeeder extends Seeder
             ],
             [
                 'name' => 'Bakso',
-                'image' => 'bakso.jpg',
+                'image' => 'bakso.webp',
                 'other_location' => 'Fuzhou, Tiongkok',
                 'province_id' => null,
                 'regency_id' => null,
