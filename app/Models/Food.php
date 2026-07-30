@@ -19,6 +19,15 @@ class Food extends Model
         return ucwords($name); // ucwords method untuk memberi initial caps pada tiap kata.
     }
 
+    public function getImageUrlAttribute()
+    {
+        $path = public_path('img/' . $this->slug . '/' . $this->image);
+        if (file_exists($path) && $this->slug && $this->image) {
+            return asset('img/' . $this->slug . '/' . $this->image);
+        }
+        return asset('img/no-food-pic.png');
+    }
+
     public function province() {
         return $this->belongsTo(RegProvince::class, 'province_id');
     }
