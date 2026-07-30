@@ -18,7 +18,7 @@
             <div class="food-list"
                 data-id="{{ $food->id }}"
                 data-name="{{ $food->name }}"
-                data-image="{{ $food->image }}"
+                data-image="{{ $food->image_url }}"
                 data-slug="{{ $food->slug }}"
                 data-body="{{ $food->body }}"
                 data-province="{{ $food->province?->name ?? '' }}"
@@ -26,9 +26,24 @@
                 data-other_location="{{ $food->other_location }}"
                 onclick="openModal(this)">
                 
-                <img src="{{ asset('img/' . $food->image) }}" alt="{{ $food->name }}">
+                {{-- <img src="{{ asset('img/' . $food->slug . '/' . $food->image) }}" alt="{{ $food->name }}"> --}}
+                @php
+                    $imagePath = public_path('img/' . $food->slug . '/' . $food->image);
+                    $imageUrl = file_exists($imagePath)
+                        ? asset('img/' . $food->slug . '/' . $food->image)
+                        : asset('img/no-food-pic.png');
+                @endphp
+                <img src="{{ $imageUrl }}" alt="{{ $food->name }}">
+
+                <!-- Debug: lihat nilai -->
+                {{-- <p>Slug: {{ $food->slug ?? 'NULL' }}</p>
+                <p>Image: {{ $food->image ?? 'NULL' }}</p>
+                <p>Path: {{ $imagePath }}</p> --}}
+
                 <div class="food-info">
-                    <h3>{{ $food->name }}</h3>
+                    <h3>
+                        {{ $food->name }}
+                    </h3>
                     {{-- <p id="myParagraph" class="text-limiter" data-word-limit="20">
                         {{ $food['body'] }}
                     </p> --}}
