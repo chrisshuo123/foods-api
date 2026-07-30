@@ -13,7 +13,9 @@ function cleanLocationName(name) {
 function openModal(element) {
     // Ambil data dari attribute
     const name = element.dataset.name;
-    const image = element.dataset.image;
+    const slug = element.dataset.slug;
+    // const image = element.dataset.image;
+    const imageUrl = element.dataset.image || '/img/1-no-image/no-food-pic.png';
     const body = element.dataset.body;
     const regency = element.dataset.regency;
     const province = element.dataset.province;
@@ -21,7 +23,8 @@ function openModal(element) {
 
     // Isi ke modal
     document.getElementById('modalTitle').textContent = name;
-    document.getElementById('modalImage').src = '/img/' + image;
+    // document.getElementById('modalImage').src = '/img/' + slug + '/' + image;
+    document.getElementById('modalImage').src = imageUrl;
     document.getElementById('modalImage').alt = name;
     document.getElementById('modalBody').textContent = body;
 
