@@ -15,7 +15,17 @@
         <div class="food-catalog">
             @foreach($foods as $food)
             {{-- Soto Ayam Lamongan --}}
-            <div class="food-list" data-id="{{ $food->id }}" data-name="{{ $food->name }}" data-image="{{ $food->image }}" data-slug="{{ $food->slug }}" data-body="{{ $food->body }}" onclick="openModal(this)">
+            <div class="food-list"
+                data-id="{{ $food->id }}"
+                data-name="{{ $food->name }}"
+                data-image="{{ $food->image }}"
+                data-slug="{{ $food->slug }}"
+                data-body="{{ $food->body }}"
+                data-province="{{ $food->province?->name ?? '' }}"
+                data-regency="{{ $food->regency?->name ?? '' }}"
+                data-other_location="{{ $food->other_location }}"
+                onclick="openModal(this)">
+                
                 <img src="{{ asset('img/' . $food->image) }}" alt="{{ $food->name }}">
                 <div class="food-info">
                     <h3>{{ $food->name }}</h3>
@@ -25,7 +35,19 @@
                     <p>{{ Str::limit($food->body, 20) }}</p>
                     <p>
                         <i class="fa-solid fa-location-dot"></i>
-                        <span><b>Located in: </b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lamongan, Jawa Timur, Indonesia</span>
+                        {{-- <span><b>Located in: </b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lamongan, Jawa Timur, Indonesia</span> --}}
+                        {{-- {{ dd($food->regency->name, $food->province->name) }} --}}
+                        <span><b>Located in: </b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @if ($food->regency && $food->province)
+                            {{ $food->cleanLocationName($food->regency->name) }}, {{ $food->cleanLocationName($food->province->name) }}, Indonesia
+                        @elseif (!$food->regency && $food->province)
+                            {{ $food->cleanLocationName($food->province->name) }}, Indonesia
+                        @elseif ($food->other_location)
+                            {{ $food->other_location }}
+                        @else
+                            Lokasi Tidak Tersedia
+                        @endif
+                        </span>
                     </p>
                     <div class="cta-read-share">
                         <a id="popupBtn" class="cta-read">Read More &raquo;</a>
@@ -50,7 +72,9 @@
             </div>
             <div class="modal-body">
                 <h2 id="modalTitle"></h2>
-                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="modalLocation">Lamongan, Jawa Timur, Indonesia</span></p>
+                {{-- <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="modalLocation">Lamongan, Jawa Timur, Indonesia</span></p> --}}
+                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i><b>Location:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="modalLocation"></span></p>
                 <p id="modalBody"></p>
                 <button class="btn btn-secondary modal-close-btn">Close</button>
             </div>
