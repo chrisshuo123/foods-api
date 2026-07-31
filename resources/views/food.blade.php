@@ -47,7 +47,7 @@
                     {{-- <p id="myParagraph" class="text-limiter" data-word-limit="20">
                         {{ $food['body'] }}
                     </p> --}}
-                    <p>{{ Str::limit($food->body, 20) }}</p>
+                    <p>{{ Str::limit($food->body, 80) }}</p>
                     <p>
                         <i class="fa-solid fa-location-dot"></i>
                         {{-- <span><b>Located in: </b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lamongan, Jawa Timur, Indonesia</span> --}}
