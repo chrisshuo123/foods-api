@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Found paragraphs:', paragraphs.length);
     
     paragraphs.forEach(function(paragraph) {
-        const wordLimit = parseInt(paragraph.dataset.wordLimit) || 20;
+        const wordLimit = parseInt(paragraph.dataset.wordLimit) || 50;
         const fullText = paragraph.textContent;
         console.log('Before:', fullText);
         const limitedText = limitWords(fullText, wordLimit);
